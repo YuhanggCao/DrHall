@@ -19,7 +19,7 @@ Question answering (QA) is a fundamental task of a large language model (LLM), w
 
 ### **Data Examples**
 We show some data examples of HalluQA here.
-![](imgs/examples.png)
+![](img/examples.png)
 
 ---
 
