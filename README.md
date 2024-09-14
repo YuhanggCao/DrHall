@@ -14,46 +14,12 @@ Question answering (QA) is a fundamental task of a large language model (LLM), w
 
 - **Purpose**: FactHalluQA is designed to assess the hallucination in the Large Language Model (LLM) while mitigating the potential influence of benchmark leakage on the assessment process.
 - **Composition**: The dataset consists of more than eight hundred questions in English, divided on the basis of disciplines, covering questions on physics, chemistry, biology, geography, history, literature, and so on.
-- **Path**: The dataset is stored in this repository in the ./RQ1/FactHalluQA path.
+- **Path**: The dataset is stored in this repository in the ```./RQ1/FactHalluQA``` path.
 
 
-### **Example**
-
-### **Initializing the MetricsAppEvalCollections Object**
-
-To evaluate the hallucination detection effectiveness, you first need to initialize the `MetricsAppEvalCollections` class. This class is responsible for collecting various metrics on evaluating the detection performance:
-
-```python
-eval_obj = MetricsAppEvalCollections(
-    state_abstract_args_obj,
-    prob_args_obj,
-    train_instances,
-    val_instances,
-    test_instances,
-)
-```
-
-Where:
-
-- `state_abstract_args_obj`: A namespace object containing arguments related to state abstraction (e.g., dataset name, block index, info type).
-- `prob_args_obj`: A namespace object containing arguments related to probability calculations (e.g., dataset, PCA dimension, model type).
-- `train_instances`, `val_instances`, `test_instances`: The data instances for training, validation, and testing.
-
-### **Collecting Metrics**
-
-Once the `MetricsAppEvalCollections` object is initialized, you can then calculate various metrics. Here are some examples:
-
-- Evaluating the model:
-
-  ```python
-  aucroc, accuracy, f1_score, _, _, hallucination_threshold = eval_obj.get_eval_result()
-  ```
-
-- Calculating entropy:
-
-  ```python
-  entropy = eval_obj.entropy()
-  ```
+### **Data Examples**
+We show some data examples of HalluQA here.
+![](imgs/examples.png)
 
 ---
 
