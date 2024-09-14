@@ -1,15 +1,14 @@
-#  PoLLMgraph: Unraveling Hallucinations in Large Language Models via State Transition Dynamics
+#  Detecting and Reducing the Factual Hallucinations of Large Language Models with Metamorphic Testing
 
-Despite tremendous advancements in large language models (LLMs) over recent years,  a notably urgent challenge for their practical deployment is the phenomenon of  **hallucination**, where the model fabricates facts and produces non-factual statements. In response, we propose **PoLLMgraph**—a Polygraph for LLMs—as an effective model-based white-box detection and forecasting approach. **PoLLMgraph** distinctly differs from the large body of existing research that concentrates on addressing such challenges through black-box evaluations. In particular, we demonstrate that hallucination can be effectively detected by analyzing the LLM's internal state transition dynamics during generation via tractable probabilistic models. Experimental results on various open-source LLMs confirm the efficacy of **PoLLMgraph**, outperforming state-of-the-art methods by a considerable margin, evidenced by over 20% improvement in AUC-ROC on common benchmarking datasets like TruthfulQA. Our work paves a new way for model-based white-box analysis of LLMs, motivating the research community to further explore, understand, and refine the intricate dynamics of LLM behaviors
+Question answering (QA) is a fundamental task of a large language model (LLM), which requires LLM to automatically answer human-posed questions in natural language. However, LLMs are known to distort facts and make non-factual statements (hallucination) when dealing with QA tasks, which may affect the deployment of LLMs in real-life situations. In this work, we present DrHall, a method for the detection of factual errors in black-box large language models inspired by metamorphosis testing in software testing. We believe that the model's hallucination answer is unstable. It is easier to produce different answers to the hallucination by using metamorphic relation (MR) to make the model take different execution paths for re-execution. We empirically evaluate DrHall on three datasets covering natural and code language data, finding that it outperforms existing methods and baselines, often by a large gap. In addition, by transforming DrHall using diverse path sampling, we obtain error correction methods with higher success rates. Our results demonstrate the potential of using MR to mitigate LLM hallucination.
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Datasets](#datasets)
-- [Function Overview](#function-overview)
-- [Demo](#demo)
+- [RQ1](#RQ1)
+- [RQ2](#RQ2)
+- [RQ3](#RQ3)
 
-## Installation
+## RQ1
 
 ### Setting up Python Environment
 
@@ -69,7 +68,7 @@ Once the `MetricsAppEvalCollections` object is initialized, you can then calcula
 ---
 
 
-## Datasets
+## RQ2
 We've conducted experiments on the following datasets:
 ---
 
@@ -95,7 +94,7 @@ Before utilizing the TruthfulQA dataset, certain preparatory steps are required:
    python add_scores_to_truthful_qa.py
    ```
 
-## Function Overview
+## RQ3
 
 ### **Model Abstraction**
 
@@ -148,22 +147,3 @@ Metrics provide a quantitative measure to evaluate the performance and character
   # Calculate the preciseness of predictions
   preciseness_mean, preciseness_max = metrics_evaluator.preciseness()
   ```
-
-
-### **Demo**
-
-To run a whole PoLLMGraph(MM) pipeline
-   ```
-   python demo.py 
-   ```
-## **Citation**
-
-```
-@inproceedings{zhu-etal-2024-pollmgraph,
-    title = "{P}o{LLM}graph: Unraveling Hallucinations in Large Language Models via State Transition Dynamics",
-    author = "Zhu, Derui  and Chen, Dingfan  and Li, Qing  and Chen, Zongxiong  and Ma, Lei  and Grossklags, Jens  and Fritz, Mario",
-    booktitle = "Findings of the Association for Computational Linguistics: NAACL 2024",
-    publisher = "Association for Computational Linguistics",
-}
-```
-
