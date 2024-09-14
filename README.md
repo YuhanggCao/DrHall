@@ -10,22 +10,12 @@ Question answering (QA) is a fundamental task of a large language model (LLM), w
 
 ## RQ1
 
-### Setting up Python Environment
+### FactHalluQA Dataset Overview
 
-1. Ensure you have Python 3.8+ installed.
-2. Clone this repository:
-   ```bash
-   git clone <repository-link>
-3. Navigate to the project directory and set up a virtual environment:
-   ```bash
-   cd pollmgraph
-   conda create -n env_name python=3.8
-4. Activate the virtual environment:
-   ```bash
-   conda activate env_name
-5. Install the necessary dependencies:
-   ```bash
-   pip install -r requirements.txt
+- **Purpose**: FactHalluQA is designed to assess the hallucination in the Large Language Model (LLM) while mitigating the potential influence of benchmark leakage on the assessment process.
+- **Composition**: The dataset consists of more than eight hundred questions in English, divided on the basis of disciplines, covering questions on physics, chemistry, biology, geography, history, literature, and so on.
+- **Path**: The dataset is stored in this repository in the ./RQ1/FactHalluQA path.
+
 
 ### **Example**
 
